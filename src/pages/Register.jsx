@@ -26,23 +26,32 @@ const Register = () => {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500 text-white">
-        <h2 className="text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-600">
+      <div className="d-flex flex-column justify-content-center align-items-center min-vh-100 bg-primary text-light">
+        <h2 
+          className="text-center fw-bold mb-4"
+          style={{
+            background: "linear-gradient(to right, #3498db, #e74c3c)",
+            WebkitBackgroundClip: "text",
+            color: "transparent"
+          }}
+        >
           Create an Account
         </h2>
-        
-        <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-xl">
-          <h3 className="text-2xl font-semibold text-center mb-4 text-gray-700">Register</h3>
 
-          {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+        <div className="container d-flex justify-content-center">
+          <div className="col-md-6 bg-white p-4 rounded shadow-lg">
+            <h3 className="text-center fw-semibold text-dark mb-3">Register</h3>
 
-          <AuthForm
-            formData={formData}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-            buttonText="Register"
-            error={error}
-          />
+            {error && <div className="alert alert-danger text-center">{error}</div>}
+
+            <AuthForm
+              formData={formData}
+              handleChange={handleChange}
+              handleSubmit={handleSubmit}
+              buttonText="Register"
+              error={error}
+            />
+          </div>
         </div>
       </div>
     </>
